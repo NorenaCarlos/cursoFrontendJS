@@ -1,13 +1,13 @@
 const menuEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
-const cartMenu = document.querySelector('.product-detail');
-const menu = document.querySelector('.menu');
+const cartMenu = document.querySelector('#shoppingCartContainer');
+const burgerMenu = document.querySelector('.menu');
 const cartMenuBag = document.querySelector('.navbar-shopping-cart');
 
 
 
-menu.addEventListener('click',toggleMobileMenu);
+burgerMenu.addEventListener('click',toggleMobileMenu);
 menuEmail.addEventListener('click',toggleDesktopMenu);
 cartMenuBag.addEventListener('click',toggleCartMenu);
 
@@ -37,6 +37,11 @@ function toggleCartMenu() {
     }
     cartMenu.classList.toggle('inactive');
 }
+function openProductDetailAside(product) {
+
+    
+}
+
 
 const productList = [];
 productList.push({
@@ -55,27 +60,13 @@ productList.push({
     image:"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 });
 
-
-/*
-<div class="product-card">
-    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-    <div class="product-info">
-        <div>
-        <p>$120,00</p>
-        <p>Bike</p>
-        </div>
-        <figure>
-        <img src="./icons/bt_add_to_cart.svg" alt="">
-        </figure>
-    </div>
-</div>*/
 for(product of productList){
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
 
-    const img = document.createElement('img');
-    img.setAttribute('src',product.image);
-
+    const productImage = document.createElement('img');
+    productImage.setAttribute('src',product.image);
+    productImage.addEventListener('click',openProductDetailAside);
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
 
@@ -99,7 +90,7 @@ for(product of productList){
     productInfo.appendChild(productInfoDiv);
     productInfo.appendChild(productInfoFigure);
 
-    productCard.appendChild(img);
+    productCard.appendChild(productImage);
     productCard.appendChild(productInfo);
 
     const cardsContainer = document.querySelector('.cards-container');
