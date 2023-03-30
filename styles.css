@@ -421,6 +421,7 @@ aside {
 
 
 /*card container*/
+
 .cards-container {
   display: grid;
   margin-top: 30px;
@@ -498,8 +499,7 @@ aside {
 }
 
 @media (min-width: 641px) {
-    .mobile-menu{
-        display: none;
-    }
-
+  .mobile-menu{
+    display: none;
+  }
 }

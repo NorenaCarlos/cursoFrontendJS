@@ -3,14 +3,14 @@ const desktopMenu = document.querySelector('.desktop-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const cartMenu = document.querySelector('#shoppingCartContainer');
 const burgerMenu = document.querySelector('.menu');
-const cartMenuBag = document.querySelector('.navbar-shopping-cart');
+const shoppingCartMenu = document.querySelector('.navbar-shopping-cart');
 const productDetailContainer = document.querySelector('#productDetail');
 const productDetailCloseIcon = document.querySelector('.product-detail-close');
 
 
 burgerMenu.addEventListener('click',toggleMobileMenu);
 menuEmail.addEventListener('click',toggleDesktopMenu);
-cartMenuBag.addEventListener('click',toggleCartMenu);
+shoppingCartMenu.addEventListener('click',toggleCartMenu);
 productDetailCloseIcon.addEventListener('click',closeProductDetailAside);
 
 
